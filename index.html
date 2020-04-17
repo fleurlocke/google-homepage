@@ -9,28 +9,27 @@ body {
   font-family: Arial;
 }
 
-ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
 }
 
-li {
+nav li {
   float: left;
 }
 
-li a {
+nav li a {
   display: block;
-  color: white;
+  color: grey;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: #111;
+nav li a:hover {
+  opacity: 0.5;
 }
 
 .center-div
@@ -42,39 +41,72 @@ li a:hover {
   border: none; 
 }
 
-* {
-  box-sizing: border-box;
+#logo {
+    padding-top: 109px;
 }
 
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
+
+input {
+    margin: 25px auto;
+    height: 45px;
+    width: 570px;
+    border: .5px solid #DCDCDC;
+    border-radius: 25px;
+    display: flex;
 }
 
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
+input:hover {
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
 }
 
-form.example button:hover {
-  background: #0b7dda;
+.searchbuttons li {
+    display: inline;
+    vertical-align: middle;
+    margin: 5px;
+
 }
 
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
+.searchbuttons ul {
+    justify-content: center;
+    display: flex;
+    padding-inline-start: 0px;
+}
+
+.searchbuttons li:hover {
+  opacity: 0.5;
+  color: black;
+}
+
+.searchbutton {
+    margin: auto;
+    align: center;
+    background-color: #f2f2f2;
+    width: 140px;
+    height: 30px;
+    color: grey;
+    border: none;
+    border-radius: 4px;
+    font-size: 10pt;
+
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    bottom: 0;
+    background-color: #f2f2f2;
+}
+
+.footer-li {
+    list-style-type: none;
+    font-size: 14px;
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+    list-style-type: none;
+    margin-right: 20px;
 }
 
 </style>
@@ -82,12 +114,14 @@ form.example::after {
 
 <header>
 
+    <nav>
+
 <ul>
-    <li><a href="default.asp">Home</a></li>
-    <li><a href="news.asp">News</a></li>
-    <li><a href="contact.asp">Contact</a></li>
-    <li><a href="about.asp">About</a></li>
+    <li><a href="default.asp">About</a></li>
+    <li><a href="news.asp">Store</a></li>
   </ul>
+
+  </nav>
 
 </header>
 
@@ -96,21 +130,44 @@ form.example::after {
 
     <div class="center-div"> 
 
-<img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"</img>
+<img id="logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"</img>
  
 </div>
 
-<form class="example" style="margin:auto;max-width:300px">
+<form class="searchbar">
 
-  <input type="text" placeholder="Search.." name="search2">
 
-  <button type="submit"><i class="fa fa-search"></i></button>
+    <input type="text" data-emoji_font="true"
+    style="font-family: system-ui, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, Symbola, EmojiSymbols !important;">
+</form>
+<div class="searchbuttons">
+    <ul> 
+        <li>
+    <button type="button" 
+    class="searchbutton" 
+    onclick="alert('Hello world!')">Google Search</button>
+</li>
+
+   <li> <button type="button" 
+    class="searchbutton" 
+    onclick="alert('Hello world!')">I'm Feeling Lucky</button>
+</li>
+</ul>
+</div>
 
 </form>
 
-<footer class="center-div"> 
 
-    <p>Created by Fleur Locke</p>
+
+<footer> 
+
+<div>
+<ul>
+    <li a href="Advertising" class="footer-li">Advertising</li>
+    <li class="footer-li">Business</li>
+    <li class="footer-li">How Search Works</li>
+</ul>
+</div>
 
 </footer>
 
